@@ -1,5 +1,4 @@
 export class Todo {
-  pkey: number;
-  name: string;
-  hasDone: boolean;
+  constructor(public pkey: number, public name: string, public hasDone: boolean) {
+  }
 }
