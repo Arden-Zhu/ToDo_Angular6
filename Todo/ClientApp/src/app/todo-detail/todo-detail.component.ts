@@ -15,4 +15,12 @@ export class TodoDetailComponent implements OnInit {
   }
 
   get diagnostic() { return JSON.stringify(this.model) }
+
+  dump(obj: any) {
+    return JSON.stringify(typeof (obj))
+  }
+
+  onSubmit() {
+    console.log("submit");
+  }
 }
