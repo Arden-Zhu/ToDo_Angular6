@@ -1,0 +1,35 @@
+Jun 25
+Create the project from SPA template, and upgrade it to Angular6
+
+Jun 26
+Use Git
+Create Todo class
+Create Todo-detail component
+	Add HTML template
+	Add model with diagnostic
+	Bind model to form control
+	Use [(ngModel)] , notes that the form control needs name attribute
+	Use <form #todoForm="ngForm">
+	Use [disabled] = "!todoForm.form.valid"
+Update Route
+
+Jun 27
+Validation
+Service
+RxJs
+
+Jun 28
+Create Todo list component
+	Add "done?" criteria 
+	connect it to todo-detail component
+
+Jun 29
+Create Rest API to CLUD todo items
+
+Jun 30
+Enhance, challage and finish it
+
+Jun 31
+Do I need MDB, ng-bootstrap , bootstrap 4? Consider it with the layout requirement of body chart.
+
+

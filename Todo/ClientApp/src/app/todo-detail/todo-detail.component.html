@@ -2,18 +2,20 @@
 
 <form #todoForm="ngForm">
   <div class="form-group">
-    <label>Primary Key</label><br/>
+    <label>Primary Key</label><br />
     {{model.pkey}}
   </div>
   <div>
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" placeholder="Task Name"
            required
-           [(ngModel)]="model.name" name="name"/>
+           [(ngModel)]="model.name" name="name"
+           #name />
   </div>
+  {{name.className}}
   <div>
     <label>
-      <input type="checkbox" [(ngModel)]="model.hasDone" name="hasDone"/> Done?
+      <input type="checkbox" [(ngModel)]="model.hasDone" name="hasDone" /> Done?
     </label>
   </div>
   <button [disabled]="!todoForm.form.valid" type="submit" class="btn btn-default">Save</button>
