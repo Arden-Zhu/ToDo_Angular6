@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    TodoDetailComponent
+    TodoDetailComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
