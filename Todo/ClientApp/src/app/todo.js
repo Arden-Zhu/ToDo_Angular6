@@ -6,6 +6,9 @@ var Todo = /** @class */ (function () {
         this.name = name;
         this.hasDone = hasDone;
     }
+    Todo.create = function () {
+        return new Todo(0, '', false);
+    };
     return Todo;
 }());
 exports.Todo = Todo;
