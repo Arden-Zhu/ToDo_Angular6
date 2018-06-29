@@ -15,21 +15,23 @@ Update Route
 
 Jun 27
 Validation
-Service
-RxJs
 
-Jun 28
-Create Todo list component
-	Add "done?" criteria 
-	connect it to todo-detail component
+Jun 29 
 
-Jun 29
-Create Rest API to CLUD todo items
 
-Jun 30
+
+Todo:
+Create 2nd Todo-detail with reactive Form
+Create a service for todo
+Create a list component and connect it to the detail component
+Add save feature to detail comp
+Add add/delete feature
+Add "done?" criteria
+Add a text search criteria
+Connect to Rest API
+
 Enhance, challage and finish it
 
-Jun 31
 Do I need MDB, ng-bootstrap , bootstrap 4? Consider it with the layout requirement of body chart.
 
 
