@@ -21,6 +21,6 @@ export class TodoDetailReactiveComponent  {
       hasDone: false
     });
   }
- 
 
+  get diagnostic() { return JSON.stringify(this.form.value); }
 }

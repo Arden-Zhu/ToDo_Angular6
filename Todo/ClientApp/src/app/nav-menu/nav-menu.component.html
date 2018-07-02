@@ -32,6 +32,11 @@
                 <span class='glyphicon glyphicon-th-list'></span> Todo
               </a>
             </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/todoReactive"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Todo Reactive
+              </a>
+            </li>
           </ul>
         </div>
     </div>
