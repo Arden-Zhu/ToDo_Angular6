@@ -35,6 +35,7 @@ import { TodoDetailReactiveComponent } from './todo-detail-reactive/todo-detail-
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'todo', component: TodoDetailComponent },
       { path: 'todoReactive', component: TodoDetailReactiveComponent },
+      { path: 'todoList', component: TodoListComponent },
     ])
   ],
   providers: [],

@@ -28,6 +28,11 @@
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/todoList"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Todo List
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/todo"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-th-list'></span> Todo
               </a>
