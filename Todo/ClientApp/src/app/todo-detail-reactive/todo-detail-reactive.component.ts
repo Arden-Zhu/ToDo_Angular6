@@ -35,8 +35,19 @@ export class TodoDetailReactiveComponent implements OnChanges {
 
   submit(): void {
     this.todo = Object.assign({}, this.form.value);
-    this.service.update(this.todo).subscribe();
-    this.rebuildForm();
+    if (this.todo.pkey == 0) {
+      this.service.update(this.todo).subscribe(
+        x => {
+          this.todo = x;
+          this.rebuildForm();
+        }
+      );
+      //this.rebuildForm();
+    }
+    else {
+      this.service.update(this.todo).subscribe();
+      this.rebuildForm();
+    }
   }
 
   revert(): void {

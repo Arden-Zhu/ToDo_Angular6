@@ -33,7 +33,7 @@ export class TodoListComponent implements OnInit {
   }
 
   remove(todo: Todo) {
-    this.service.remove(todo);
+    this.service.remove(todo).subscribe();
     //const idx = this.todoList.indexOf(todo);
     //this.todoList.splice(idx, 1);
   }
