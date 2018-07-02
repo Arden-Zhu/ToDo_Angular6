@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Todo } from '../todo'
 
@@ -7,8 +7,9 @@ import { Todo } from '../todo'
   templateUrl: './todo-detail-reactive.component.html',
   styleUrls: ['./todo-detail-reactive.component.css']
 })
-export class TodoDetailReactiveComponent  {
+export class TodoDetailReactiveComponent implements OnChanges {
   form: FormGroup;
+  @Input() todo: Todo;
 
   constructor(private fb: FormBuilder) {
     this.createForm();
@@ -20,6 +21,10 @@ export class TodoDetailReactiveComponent  {
       name: ['', Validators.required],
       hasDone: false
     });
+  }
+
+  ngOnChanges(): void {
+    this.form.reset(this.todo);
   }
 
   get diagnostic() { return JSON.stringify(this.form.value); }

@@ -10,6 +10,7 @@ import { TodoService  } from '../todo.service';
 })
 export class TodoListComponent implements OnInit {
   todoList: Todo[];
+  selectedTodo: Todo;
 
   constructor(private service : TodoService) { }
 
@@ -19,6 +20,10 @@ export class TodoListComponent implements OnInit {
 
   getTodoList() {
     this.todoList = this.service.getTodoList();
+  }
+
+  selectTodo(todo: Todo) {
+    this.selectedTodo = todo; 
   }
 
 }
