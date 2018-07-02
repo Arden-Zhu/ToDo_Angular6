@@ -71,6 +71,7 @@ export class TodoService {
     //const idx = todoList.indexOf(todo);
     //todoList.splice(idx, 1);
     //return of(true).pipe(delay(this.delayMs));
+    //
     return this.http.delete<boolean>(this.httpUrl + '/' + todo.pkey)
       .pipe(tap(f => {
         if (f) {
