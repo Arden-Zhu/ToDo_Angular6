@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+
 import { Todo } from '../todo'
+import { TodoService } from '../todo.service'
 
 @Component({
   selector: 'app-todo-detail-reactive',
@@ -11,7 +13,7 @@ export class TodoDetailReactiveComponent implements OnChanges {
   form: FormGroup;
   @Input() todo: Todo;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private service: TodoService) {
     this.createForm();
   }
 
@@ -24,6 +26,15 @@ export class TodoDetailReactiveComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
+    this.form.reset(this.todo);
+  }
+
+  submit(): void {
+    this.todo = Object.assign({}, this.form.value);
+    this.service.update(this.todo);
+  }
+
+  revert(): void {
     this.form.reset(this.todo);
   }
 

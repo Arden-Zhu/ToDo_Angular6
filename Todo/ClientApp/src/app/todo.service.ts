@@ -13,4 +13,11 @@ export class TodoService {
   getTodoList(): Todo[] {
     return todoList;
   }
+
+  update(todo: Todo) {
+    const oldTodo = todoList.find(t => t.pkey == todo.pkey);
+    if (oldTodo) {
+      const newTodo = Object.assign(oldTodo, todo);
+    }
+  }
 }
