@@ -1,6 +1,6 @@
 <div>
   <ul>
-    <li *ngFor="let todo of todoList">
+    <li *ngFor="let todo of todoList | async">
       <a (click)="selectTodo(todo)">
         {{todo.name}}
       </a>

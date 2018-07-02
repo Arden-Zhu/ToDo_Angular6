@@ -26,16 +26,21 @@ export class TodoDetailReactiveComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
+    this.rebuildForm();
+  }
+
+  rebuildForm(): void {
     this.form.reset(this.todo);
   }
 
   submit(): void {
     this.todo = Object.assign({}, this.form.value);
-    this.service.update(this.todo);
+    this.service.update(this.todo).subscribe();
+    this.rebuildForm();
   }
 
   revert(): void {
-    this.form.reset(this.todo);
+    this.rebuildForm();
   }
 
   get diagnostic() { return JSON.stringify(this.form.value); }

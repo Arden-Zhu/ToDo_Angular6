@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
 import { Todo } from '../todo';
 import { TodoService  } from '../todo.service';
 
@@ -9,7 +9,7 @@ import { TodoService  } from '../todo.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todoList: Todo[];
+  todoList: Observable<Todo[]>;
   selectedTodo: Todo;
 
   constructor(private service : TodoService) { }
@@ -27,9 +27,9 @@ export class TodoListComponent implements OnInit {
   }
 
   add() {
-    let todo = this.service.addNew();
+    this.service.addNew().forEach((todo) => this.selectedTodo = todo);
     //this.todoList.push(todo);
-    this.selectedTodo = todo;
+    //this.selectedTodo = todo;
   }
 
   remove(todo: Todo) {
