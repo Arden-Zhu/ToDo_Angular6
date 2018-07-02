@@ -26,4 +26,15 @@ export class TodoListComponent implements OnInit {
     this.selectedTodo = todo; 
   }
 
+  add() {
+    let todo = this.service.addNew();
+    //this.todoList.push(todo);
+    this.selectedTodo = todo;
+  }
+
+  remove(todo: Todo) {
+    this.service.remove(todo);
+    //const idx = this.todoList.indexOf(todo);
+    //this.todoList.splice(idx, 1);
+  }
 }

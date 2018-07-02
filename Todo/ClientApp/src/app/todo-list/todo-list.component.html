@@ -4,7 +4,11 @@
       <a (click)="selectTodo(todo)">
         {{todo.name}}
       </a>
+      &nbsp;
+      <button class="btn btn-default" (click)="remove(todo)">Remove</button>
     </li>
   </ul>
+  <button class="btn btn-default" (click)="add()">Add</button>
+  
   <app-todo-detail-reactive *ngIf="selectedTodo" [todo]="selectedTodo"></app-todo-detail-reactive>
 </div>
